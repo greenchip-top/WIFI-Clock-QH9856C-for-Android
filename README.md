@@ -48,7 +48,7 @@ When the clock is disconnected from WlFI, the display mode is: when the APP is s
 
 The Smart Phone application (hereafter called Apps) needs to be used with the QH9856C (hereafter called WIFI clock).
 
-[Android Version](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/blob/master/apk/QH9856C-V1.6.apk)
+[Android Version](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/apk/QH9856C-V1.6.apk)
 
 ### Mobile phone APP Interface
 
