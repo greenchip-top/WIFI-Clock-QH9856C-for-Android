@@ -48,7 +48,7 @@ When the clock is disconnected from WlFI, the display mode is: when the APP is s
 
 The Smart Phone application (hereafter called Apps) needs to be used with the QH9856C (hereafter called WIFI clock).
 
-[Android Version](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/apk/)
+[Android Version](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/apk/QH9856C V1.6.apk)
 
 ### Mobile phone APP Interface
 
@@ -56,7 +56,7 @@ Mobile phone Apps called QH9856C.
 
 Open the app then automatically enter the setting country city interface.
 
-##### Setting country city interface
+#### Setting country city interface
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/4.png)
 
@@ -82,7 +82,7 @@ Enter the advanced interface;
 
 Enter the description interface.
 
-##### Alarm setting interface 
+#### Alarm setting interface 
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/5.png)
 
@@ -104,7 +104,7 @@ Enter the snooze state (perform operation) {QH9856C (WIFI clock) is used when it
 
 Stop the alarm sound (perform operation) {QH9856C (WIFI clock) is used when it is ringing}
 
-##### Advanced settings interface
+#### Advanced settings interface
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/6.png)
 
@@ -128,7 +128,7 @@ Hourly time end time setting (perform operation);
 
 Language selection: Chinese simplified, Chinese traditional, English;
 
-##### Help interface 
+#### Help interface 
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/7.jpg)
 
@@ -148,7 +148,7 @@ Enter the advanced interface
 
 Enter the description interface which is also the current interface
 
-##### Device list interface  
+#### Device list interface  
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/8.jpg)
 
@@ -164,7 +164,7 @@ Device 2, click to select this device
 
 Device 3, click to select this device
 
-##### Change device name interface
+#### Change device name interface
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/9.png)
 
@@ -176,7 +176,7 @@ Save your changes and back to the previous interface
 
 Set a new name
 
-##### Configuration interface 
+#### Configuration interface 
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/10.jpg)
 
@@ -194,7 +194,7 @@ Choose whether display the password or not (perform operation)
 
 Configuration settings to connect to the router
 
-##### Configuration success and configuration failed
+#### Configuration success and configuration failed
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/11.png)
 
@@ -202,15 +202,15 @@ When the configuration fails, you cannot connect to the wifi clock and need to r
 
 ### Module Introduction
 
-##### QHM126 WiFi Module Size Data
+#### QHM126 WiFi Module Size Data
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/12.png)
 
-##### Foot bit matrix (LQFP48)
+#### Foot bit matrix (LQFP48)
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/13.jpg)
 
-##### Foot bit matrix (Die)
+#### Foot bit matrix (Die)
 
 ![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/14.png)
 
