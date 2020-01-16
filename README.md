@@ -216,7 +216,7 @@ When the configuration fails, you cannot connect to the wifi clock and need to r
 
 ### Application line
 
-![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/15.png)
+[DS QH9856C Application line PDF](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/DS-QH9856C-Application-line.pdf)
 
 The crystal needs to be closest to the wafer and try to avoid placing it with the LED line and the alarm circuit;
 
