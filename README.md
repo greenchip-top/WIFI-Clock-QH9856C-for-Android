@@ -280,7 +280,7 @@ At this time, it will be found that the corresponding description of the jar fil
 
 ##### Configuration AndroidManifest.xml
 
-![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/1.png)
+![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/19.png)
 
 #### Getting Started
 
