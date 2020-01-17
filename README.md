@@ -266,21 +266,21 @@ Latest stable [Android Studio 3.5.3](https://developer.android.google.cn/studio/
 
 Copy the downloaded WiFi clock.jar file to the LIBS directory of the project (the screenshot here takes the official demo as an example), as shown in the figure:
 
-[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/16.png)
+![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/16.png)
 
 ##### Add jar files to the project
 
 In the libs directory, select the jar file, right-click, and select Add as library, as shown in the figure:
 
-[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/17.png)
+![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/17.png)
 
 At this time, it will be found that the corresponding description of the jar file that the project depends on is generated in the dependencies block of build.gradle in the app directory, as shown in the figure:
 
-[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/18.png)
+![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/18.png)
 
 ##### Configuration AndroidManifest.xml
 
-[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/1.png)
+![image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/1.png)
 
 #### Getting Started
 
