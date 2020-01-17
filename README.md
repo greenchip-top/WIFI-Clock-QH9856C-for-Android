@@ -251,3 +251,259 @@ If it receives successfully, will display the〝SUCC〞for 2 seconds and then di
 If the above information is subject to change without prior notice. Please confirm whether the information in hand is the latest version before use.
 
 We will not be liable for any duty due to the consequences of incorrect or improper operation.
+
+### Android Demo
+
+#### How to Build
+
+You require the following to build Demo:
+
+Latest stable [Oracle JDK 8](http://www.oracle.com/technetwork/java/)
+
+Latest stable [Android Studio 3.5.3](https://developer.android.google.cn/studio/)
+
+##### Copy jar file to LIBS file
+
+Copy the downloaded WiFi clock.jar file to the LIBS directory of the project (the screenshot here takes the official demo as an example), as shown in the figure:
+
+[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/16.png)
+
+##### Add jar files to the project
+
+In the libs directory, select the jar file, right-click, and select Add as library, as shown in the figure:
+
+[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/17.png)
+
+At this time, it will be found that the corresponding description of the jar file that the project depends on is generated in the dependencies block of build.gradle in the app directory, as shown in the figure:
+
+[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/18.png)
+
+##### Configuration AndroidManifest.xml
+
+[image](https://github.com/greenchip-top/WIFI-Clock-QH9856C-for-Android/raw/master/image/1.png)
+
+#### Getting Started
+
+Declare the WIFIclock_9856C class and instantiate the WIFIclock_9856C class in the main thread.
+
+```java
+public class MainActivity extends AppCompatActivity {
+
+    WIFIclock_9856C clock;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        clock = new WIFIclock_9856C();
+    }
+}
+```
+
+For the new equipment used for the first time, it is necessary to distribute the network to the equipment, or press the reset key of the equipment three times in succession, and it can actively distribute the network. The following example code describes the implementation process of the distribution network.
+
+```java
+// During the network distribution process, there is no callback for more than 30 seconds, which means that it is a failure and relevant judgments need to be made。
+clock.configureWIFI("WIFI name","WIFI password");
+clock.setSuccessListener(new WIFIclock_9856C.SuccessConfigure() {
+    @Override
+    public void Success() {
+        // Configure network, success
+    }
+});
+clock.setFailListener(new WIFIclock_9856C.FailConfigure() {
+    @Override
+    public void Fail() {
+        // Configure network, failed
+    }
+});
+```
+
+Set the listening event to monitor the device and perform more operations on the device. You can execute the following example code.
+
+```java
+clock.setSuccessListener(new WIFIclock_9856C.SuccessListener() {
+    @Override
+    public void Success(String host, String mac, WIFIclock_9856C.Channel channel) {
+        // Successful connection
+    }
+});
+clock.setFailListener(new WIFIclock_9856C.FailListener() {
+    @Override
+    public void Fail() {
+        // disconnect
+    }
+});
+clock.setReturnListener(new WIFIclock_9856C.ReturnListener() {
+    @Override
+    public void Return(String data) {
+        // Data received
+    }
+});
+clock.run(); // start-up
+```
+
+Operate the device. When the device is connected successfully, three parameters will be returned.
+
+1.Network IP of the device;
+
+2.Unique MAC sequence of device;
+
+3.Operation class of device ;
+
+#### API reference
+
+This class is a function class that operates the instance of WiFi clock.
+
+```java
+public class WIFIclock_9856C.Channel
+```
+
+##### To obtain the relevant country and city data
+
+```java
+void Channel.getAreaInfo()
+```
+
+```java
+clock.setReturnListener(new WIFIclock_9856C.ReturnListener() {
+    @Override
+    public void Return(String data) {
+       // json is area data
+    }
+});
+```
+
+Returns a string example in JSON format
+
+```json
+[{"e_country":"Canada","t_country":" Canada ","s_country":" Canada ","countryid":"1","city":[{"e_city":"CALGARY","t_city":"Calgary","s_city":"Calgary","countryid":"1"},...]],...}]
+```
+
+##### Read the device data
+
+```java
+void Channel.getDeviceData()
+```
+
+```java
+clock.setReturnListener(new WIFIclock_9856C.ReturnListener() {
+    @Override
+    public void Return(String data) {
+       // string data is device data
+    }
+});
+```
+
+Return string example
+
+```json
+CHINA,SHENZHEN,0,06221010101,07331010101,0,1,1,00507,2,1,0
+```
+
+(Country),(City),(Alarm switch),(Hour Minute Cycle mode),(Hour Minute Cycle mode),(Time mode),(Synchronous interval),(Temperature unit),(Hourly time switch Start time End time),(Display mode),(Alarm beep),(Date display mode).
+
+##### Set the country and city
+
+```java
+void Channel.setDeviceArea(String Country, String City);
+```
+
+Parameter 1: Country Name (English)  
+
+Parameter 2: City Name (English)
+
+##### Set the alarm time
+
+```java
+void Channel.setDeviceAlarm("2", "7", "11", "1111110", "6", "22", "0101010", "1");
+```
+
+Parameter 1: turn off two alarm clocks
+
+​				   	0: turn off two alarm clocks
+
+​				   	1: alarm 1 on, alarm 2 off
+
+​				   	2: alarm 1 off, alarm 2 on
+
+​				   	3: turn on two alarm clocks
+
+Parameter 2: alarm clock 1: hour
+
+Parameter 3: alarm clock 1: minute
+
+Parameter 4: alarm clock 1: cycle mode: Sunday Monday Tuesday Wednesday Thursday Friday Saturday(value is 0 or 1)
+
+Parameter 5: alarm clock 2: hour
+
+Parameter 6: alarm clock 2: minute
+
+Parameter 7: alarm clock 2: cycle mode: Sunday Monday Tuesday Wednesday Thursday Friday Saturday(value is 0 or 1)
+
+Parameter 8: (alarm beep switch) (AOF pull key switch)
+
+​      				0: alarm beep off
+
+​					  1: alarm beep on
+
+##### System parameter settings
+
+```java
+void Channel.setDeviceAlarm("1", "2", "0", "1", "6", "8", "3", "1");
+```
+
+Parameter 1: time mode
+
+​						0: 12 hour mode
+
+​						1: 24-hour mode
+
+Parameter 2: synchronization interval
+
+​						0: every day
+
+​						1: weekly
+
+​						2: monthly
+
+Parameter 3: temperature unit
+
+​						0: Celsius
+
+​						1: Fahrenheit
+
+Parameter 4: hour reporting time 0: off 1: on
+
+Parameter 5: start time (hours)
+
+Parameter 6: end time (hours)
+
+Parameter 7: display mode
+
+​						0: single time mode
+
+​						1: cycle mode
+
+​						2: single date mode
+
+​						3: single temperature mode
+
+ Parameter 8: date display mode
+
+​						0: MM-DD
+
+​						1: DD-MM
+
+##### Control command, turn off alarm sound, no SNZ
+
+```java
+void Channel.setMuteAlarm();
+```
+
+##### Control command, turn off the alarm sound, there is SNZ, that is, the alarm will ring again after 8 minutes
+
+```
+void Channel.setLazyAlarm();
+```
+
