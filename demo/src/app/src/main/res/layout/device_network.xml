@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:keepScreenOn="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="15dp"
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="WiFi名称："
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/wifi_name"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#efefef"
+                android:gravity="center"
+                android:hint="@null"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="2512"
+                android:textColor="#000000"
+                android:textColorHint="#cccccc"
+                android:textSize="18sp"
+                tools:ignore="Autofill,HardcodedText" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="-130dp"
+                android:layout_marginTop="30dp"
+                android:background="#666666" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="5dp"
+                android:text="WiFi密码："
+                android:textColor="#000000"
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
+
+            <EditText
+                android:id="@+id/wifi_pass"
+                android:layout_width="150dp"
+                android:layout_height="44dp"
+                android:background="#efefef"
+                android:gravity="center"
+                android:hint="@null"
+                android:inputType="text"
+                android:maxLines="1"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:text="ls.k2512"
+                android:textColor="#000000"
+                android:textColorHint="#cccccc"
+                android:textSize="18sp"
+                tools:ignore="Autofill,HardcodedText" />
+
+            <TextView
+                android:layout_width="130dp"
+                android:layout_height="1dp"
+                android:layout_marginStart="-130dp"
+                android:layout_marginTop="30dp"
+                android:background="#666666" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="1、设备快速上下电 3 次，设备进入配置模式。\n\n2、然后点击 (配置) 按钮。"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="目前不支持5G频段的WiFi\n请使用2.4G频段的WiFi"
+            android:textColor="#cc0000"
+            android:textSize="16sp"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/configure"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="#008577"
+            android:padding="10dp"
+            android:text="配置"
+            android:textColor="#ffffff"
+            android:textSize="26sp"
+            tools:ignore="HardcodedText" />
+
+        <LinearLayout
+            android:id="@+id/tips"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="配置中，请稍候 ..."
+                android:textColor="#000000"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

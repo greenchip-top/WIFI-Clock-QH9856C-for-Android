@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/getAreaInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="获取国家和城市数据"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="( 返回JSON格式的字符串 )"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+
+                <top.greenchip.qh9856c_demo.MyScrollView
+                    android:id="@+id/getAreaInfo_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="122dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#dddddd"
+                    android:padding="10dp"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/getAreaInfo_data"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:scrollbars="vertical"
+                            android:textColor="#000000"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </top.greenchip.qh9856c_demo.MyScrollView>
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/getDeviceData"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="读取设备数据"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/getDeviceData_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="#dddddd"
+                    android:padding="10dp"
+                    android:scrollbars="vertical"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/getDeviceData_tips_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="解释"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/getDeviceData_tips_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="国家,城市,响闹开关,小时 分钟 循环方式,小时 分钟 循环方式,时间 模式,同步间隔,温度单位,整点报时时间开关 开始时间 结束时间,显示 模式,alarm beep,日期显示模式,"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setDeviceArea"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="设置国家与城市"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/area_01"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:text="CHINA"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/area_02"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:text="JIANGMEN"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="解释"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="参数一：国家名称(英文)\n参数二：城市名称(英文)"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setDeviceAlarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="设置闹钟时间"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/alarm_01"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_02"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="7"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_03"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_04"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0000000"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_05"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="14"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_06"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_07"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="3"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0000000"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/alarm_08"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="解释"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="
+参数一：关闭两个闹钟\n\t\t\t\t\t\t\t\t\t=0: 关闭两个闹钟\n\t\t\t\t\t\t\t\t\t=1: 闹钟 1 开, 闹钟 2 关\n\t\t\t\t\t\t\t\t\t=2: 闹钟 1 关, 闹钟 2 开\n\t\t\t\t\t\t\t\t\t=3: 开启两个闹钟\n
+参数二：(闹钟 1) 小时\n
+参数三：(闹钟 1) 分钟\n
+参数四：(闹钟 1) 循环方式\n\t\t\t\t\t\t\t\t\t星期日一二三四五六 (=0 或 =1)\n
+参数五：(闹钟 2) 小时\n
+参数六：(闹钟 2) 分钟\n
+参数七：(闹钟 2) 循环方式\n\t\t\t\t\t\t\t\t\t星期日一二三四五六 (=0 或 =1)\n
+参数八：(ALARM BEEP 开关)(AOF 拔键开关)\n\t\t\t\t\t\t\t\t\t=0: alarm beep off\n\t\t\t\t\t\t\t\t\t=1: alarm beep on"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setDeviceParam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="设置其它参数"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/param_01"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="1"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_02"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="1"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_03"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_04"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_05"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="8"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_06"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="18"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_07"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="1"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+
+                    <EditText
+                        android:id="@+id/param_08"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/shape"
+                        android:gravity="center"
+                        android:hint="@null"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:text="0"
+                        android:textColor="#000000"
+                        android:textColorHint="#cccccc"
+                        android:textSize="14sp"
+                        tools:ignore="Autofill,HardcodedText" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="解释"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="
+参数一：时间模式\n\t\t\t\t\t\t\t\t\t=0: 12 小时模式\n\t\t\t\t\t\t\t\t\t=1: 24 小时模式\n
+参数二：同步间隔\n\t\t\t\t\t\t\t\t\t=0: 每天\n\t\t\t\t\t\t\t\t\t=1: 每周\n\t\t\t\t\t\t\t\t\t=2: 每月\n
+参数三：温度单位\n\t\t\t\t\t\t\t\t\t=0: 摄氏\n\t\t\t\t\t\t\t\t\t=1: 华氏\n
+参数四：整点报时时间\t\t0: 关\t\t1: 开\n
+参数五：开始时间 (小时)\n
+参数六：结束时间 (小时)\n
+参数七：显示模式\n\t\t\t\t\t\t\t\t\t=0: 单时间模式\n\t\t\t\t\t\t\t\t\t=1: 循环模式\n\t\t\t\t\t\t\t\t\t=2: 单日期模式\n\t\t\t\t\t\t\t\t\t=3: 单温度模式\n
+参数八：日期显示模式\n\t\t\t\t\t\t\t\t\t=0: 月日(MM-DD)\n\t\t\t\t\t\t\t\t\t=1: 日月(DD-MM)"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <TextView
+                android:id="@+id/setMuteAlarm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:background="#008577"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="10dp"
+                android:text="关闭闹钟声音，无SNZ"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#000000" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/setLazyAlarm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#008577"
+                    android:paddingStart="20dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="20dp"
+                    android:paddingBottom="10dp"
+                    android:text="关闭闹钟声音，有SNZ"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="( 8 分钟后会再响闹 1 次 )"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/block"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:visibility="gone"
+        tools:ignore="KeyboardInaccessibleWidget" />
+
+</RelativeLayout>
