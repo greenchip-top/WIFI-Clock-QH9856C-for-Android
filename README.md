@@ -4,6 +4,8 @@
 
 It is convenient and simple to set up network with a smartphone Apps-QH9856C. Once the WIFI is set up for networking, the city; date and time are automatically synchronized, and no manual adjustment is required.
 
+[QH9856C hardware](https://dwz.cn/IarlXSF2)
+
 Apps Setting: 12/24 hours，The default is 12H system AM 12:00
 
 Apps Setting: Hourly chime and hourly chime range
